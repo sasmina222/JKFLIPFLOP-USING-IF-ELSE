@@ -34,15 +34,54 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+/* write all the steps invloved 
+
+*/
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:212225230254
+```
+module JK_FF(q, qb,j,k,clock,reset);
+    input j,k,clock,reset;
+    output reg q, qb;
+always @ (posedge (clock))
+    begin 
+        if (!reset)
+            begin
+               q <= q;
+               qb <=qb;
+            end  
+else
+            begin
+               if (j == 0 && k == 0)
+                    begin
+                    q <= q;
+qb <= qb;
+                    end 
+else if (j != k)
+                    begin
+                    q <= j;
+                    qb <= k;
+                    end
+               else if (j == 1 && k == 1) 
+                    begin 
+                    q <= ~q; 
+                    qb <= ~qb; 
+                    end 
+            end
+end  
+endmodule
+```
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
+<img width="564" height="296" alt="image" src="https://github.com/user-attachments/assets/57d0044a-06f7-4513-8ba3-b001d2573a11" />
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+<img width="761" height="216" alt="image" src="https://github.com/user-attachments/assets/c8f27df3-5f8c-441c-82d5-571d1f4cfcf6" />
+
 
 **RESULTS**
+Thus the truth table of logic gates in Quartus II using Verilog programming is studied and verified successfully.
